@@ -1,6 +1,7 @@
 pipeline{
-     agents any 
-           stage('Build'){
+     agent any 
+           stages {
+                stage('Build'){
                  steps       {
                         eco 'Build App'
                              }
@@ -16,3 +17,4 @@ pipeline{
                        }
                  }
           }
+}
