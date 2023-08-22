@@ -3,17 +3,17 @@ pipeline{
            stages {
                 stage('Build'){
                  steps       {
-                        eco 'Build App'
+                        echo 'Build App'
                              }
                          }
  stage('Test'){
                  steps{
-                        eco 'Test App'
+                        echo 'Test App'
                        }
               }
  stage('Deploy'){
                  steps{
-                        eco 'Deploy App'
+                        echo 'Deploy App'
                        }
                  }
           }
