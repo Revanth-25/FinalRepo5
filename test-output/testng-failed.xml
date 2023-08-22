@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [WebApp Suite]" guice-stage="DEVELOPMENT">
+  <test thread-count="5" name="WebApp Test(failed)">
+    <classes>
+      <class name="testcases.TestButtons">
+        <methods>
+          <include name="tearDown"/>
+          <include name="setUp"/>
+          <include name="testButton"/>
+        </methods>
+      </class> <!-- testcases.TestButtons -->
+      <class name="testcases.HandleOrderNumber">
+        <methods>
+          <include name="tearDown"/>
+          <include name="setUp"/>
+          <include name="ONtest"/>
+        </methods>
+      </class> <!-- testcases.HandleOrderNumber -->
+      <class name="testcases.HandleName">
+        <methods>
+          <include name="nameTest"/>
+          <include name="tearDown"/>
+          <include name="setUp"/>
+        </methods>
+      </class> <!-- testcases.HandleName -->
+    </classes>
+  </test> <!-- WebApp Test(failed) -->
+</suite> <!-- Failed suite [WebApp Suite] -->
