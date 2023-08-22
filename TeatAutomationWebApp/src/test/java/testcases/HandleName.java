@@ -10,7 +10,7 @@ public class HandleName extends baseTest {
 	
 	@Test
 	public static void nameTest() throws Exception {
-		Thread.sleep(5000);	 
+		Thread.sleep(4000);	 
 	     WebElement usernameTxt = driver.findElement(By.id("Name"));
 	     if(usernameTxt.isDisplayed()) {
 	        	if(usernameTxt.isEnabled()) {
