@@ -11,7 +11,7 @@ public class HandleOrderNumber extends baseTest {
           @Test
           public static void ONtest() throws Exception
           {
-        	  Thread.sleep(7000);
+        	  Thread.sleep(4000);
               
               WebElement orderNum = driver.findElement(By.id("OrderNumber"));
               if(orderNum.isDisplayed()) {
@@ -19,7 +19,7 @@ public class HandleOrderNumber extends baseTest {
               		orderNum.sendKeys("5678");
               		String enteredText = orderNum.getAttribute("value");
               		System.out.println(enteredText);
-              		Thread.sleep(7000);
+              		Thread.sleep(4000);
               		orderNum.clear();
               	}
               	else
