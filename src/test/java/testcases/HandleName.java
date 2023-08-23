@@ -10,15 +10,15 @@ public class HandleName extends baseTest {
 	
 	@Test
 	public static void nameTest() throws Exception {
-		Thread.sleep(4000);	 
-	     WebElement usernameTxt = driver.findElement(By.id("Name"));
+		Thread.sleep(2000);	 
+	     WebElement usernameTxt = driver.findElement(By.xpath("//*[@id='Name']"));
 	     if(usernameTxt.isDisplayed()) {
 	        	if(usernameTxt.isEnabled()) {
 	        		usernameTxt.sendKeys("Rev");
 	        		String enteredText = usernameTxt.getAttribute("value");
 	        		System.out.println(enteredText);
 	        		
-	        		Thread.sleep(3000);
+	        		Thread.sleep(2000);
 	        		
 	        		usernameTxt.clear();
 	        	}
