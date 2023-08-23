@@ -28,8 +28,8 @@ public class baseTest {
     	   if(prop.getProperty("browser").equalsIgnoreCase("chrome")) {
     			WebDriverManager.chromedriver().setup();  //base
     			driver = new ChromeDriver(); 
-    			driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-    			driver.get(prop.getProperty("testUrl"));
+    			driver.get("https://localhost:44340/Orders/Create");
+		        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
     	   }
        }
 	    @AfterTest
