@@ -6,7 +6,7 @@ pipeline{
                         bat "rmdir   /s  /q  AssessmentWebApp"
                         bat "git clone https://github.com/Revanth-25/AssessmentWebApp.git"
                         bat "mvn clean -f AssessmentWebApp"
-                        bat  "mvn build -f AssessmentWebApp"
+                        bat  "mvn install -f AssessmentWebApp"
                         echo 'Build App'
                              }
                          }
