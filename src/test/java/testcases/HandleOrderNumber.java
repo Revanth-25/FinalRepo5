@@ -13,7 +13,7 @@ public class HandleOrderNumber extends baseTest {
           {
         	  Thread.sleep(4000);
               
-              WebElement orderNum = driver.findElement(By.id("OrderNumber"));
+              WebElement orderNum = driver.findElement(By.xpath("//*[@id='OrderNumber']"));
               if(orderNum.isDisplayed()) {
               	if(orderNum.isEnabled()) {
               		orderNum.sendKeys("5678");
