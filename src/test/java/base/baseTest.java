@@ -20,17 +20,12 @@ public class baseTest {
 	   public static FileReader fr;
 	    @BeforeTest
        public void setUp() throws IOException {
-    	   if(driver==null) {
-    		   //user.dir creates filepath
-    		   FileReader fr = new FileReader(System.getProperty("user.dir")+"\\src\\test\\resources\\configfile\\config.properties");
-    		   prop.load(fr);
-    	   }
-    	   if(prop.getProperty("browser").equalsIgnoreCase("chrome")) {
+    	 
     			WebDriverManager.chromedriver().setup();  //base
     			driver = new ChromeDriver(); 
     			driver.get("https://localhost:44340/Orders/Create");
 		        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-    	   }
+    	   
        }
 	    @AfterTest
 	       public void tearDown() {
