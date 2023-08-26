@@ -1,20 +1,14 @@
-FROM mcr.microsoft.com/dotnet/aspnet:6.0 AS base
-WORKDIR /app
-EXPOSE 80
-EXPOSE 443
-
-FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build
-WORKDIR /src
-COPY ["OrdersListWeb.csproj", "."]
-RUN dotnet restore "./OrdersListWeb.csproj"
+FROM mcr.microsoft.com/dotnet/aspnet:6.0 AS build
+WORKDIR /source
 COPY . .
-WORKDIR "/src/."
-RUN dotnet build "OrdersListWeb.csproj" -c Release -o /app/build
 
-FROM build AS publish
-RUN dotnet publish "OrdersListWeb.csproj" -c Release -o /app/publish /p:UseAppHost=false
+RUN dotnet restore "./OrdersListWeb.csproj"  --disable-parallel
+RUN dotnet publish "OrdersListWeb.csproj" -c Release -o /app/publish --no-restore
 
-FROM base AS final
+FROM mcr.microsoft.com/dotnet/aspnet:6.0
 WORKDIR /app
-COPY --from=publish /app/publish .
+COPY --from=build /app/publish ./
+
+EXPOSE 5000
+
 ENTRYPOINT ["dotnet", "OrdersListWeb.dll"]
