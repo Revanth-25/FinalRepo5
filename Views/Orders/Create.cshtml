@@ -17,8 +17,8 @@
 			<input asp-for="OrderNumber"class=" form-control" />
 			<span asp-validation-for="OrderNumber" class=" text-danger"></span>
 		</div>
-		<button type="submit" class="btn btn-primary" style="width:150px">Add</button>
-		<a asp-controller="Orders" asp-action="Index" class="btn btn-secondary" style="width:150px">
+		<button type="submit" id="add" class="btn btn-primary" style="width:150px">Add</button>
+		<a asp-controller="Orders" asp-action="Index" id="order" class="btn btn-secondary" style="width:150px">
 			Back To Orders
 		</a>
  	</div>
