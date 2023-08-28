@@ -10,6 +10,16 @@ pipeline{
                         echo 'Build Done'
                              }
                          }
+                stage('Push image') {
+    withCredentials([usernamePassword( credentialsId: 'docker-hub-credentials', usernameVariable: 'revanth2', passwordVariable: 'Devops@1st')]) {
+        def registry_url = "registry.hub.docker.com/"
+        bat "docker login -u $USER -p $PASSWORD ${registry_url}"
+        docker.withRegistry("http://${registry_url}", "docker-hub-credentials") {
+            // Push your image now
+            bat "docker push revanth2/webapp:build"
+        }
+    }
+}
  stage('Deploy'){
                  steps{
                         bat "mvn deploy -f AssessmentWebApp"
